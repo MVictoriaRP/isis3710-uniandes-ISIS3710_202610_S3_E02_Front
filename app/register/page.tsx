@@ -17,38 +17,13 @@ export default function RegisterPage() {
         alignItems: "center",
         justifyContent: "center",
         padding: "100px 20px 60px",
-        fontFamily: "'Cinzel', 'Georgia', serif",
       }}
     >
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
-        .input-field {
-          width: 100%;
-          padding: 14px 16px;
-          border-radius: 8px;
-          background: rgba(255,255,255,0.05);
-          border: 1px solid rgba(230,184,0,0.25);
-          color: #fff;
-          font-family: 'Georgia', serif;
-          font-size: 15px;
-          outline: none;
-          transition: border-color 0.2s;
-          box-sizing: border-box;
-        }
-        .input-field:focus { border-color: #E6B800; }
-        .input-field::placeholder { color: rgba(255,255,255,0.3); }
-        .btn-gold { width:100%; padding:16px; border-radius:8px; background:linear-gradient(135deg,#E6B800,#CC8800); color:#1a0305; font-weight:700; font-size:15px; border:none; cursor:pointer; font-family:'Cinzel',serif; letter-spacing:0.06em; box-shadow:0 4px 28px rgba(230,184,0,0.4); transition:all 0.15s ease; }
-        .btn-gold:hover { background:linear-gradient(135deg,#FFD700,#E6A000); transform:translateY(-1px); }
-        .btn-gold:active { background:linear-gradient(135deg,#B8860B,#996600); transform:translateY(1px); }
-      `}</style>
-
       <div
+        className="card"
         style={{
-          width: "100%",
           maxWidth: "420px",
-          background: "rgba(255,255,255,0.03)",
-          border: "1px solid rgba(230,184,0,0.15)",
-          borderRadius: "16px",
+          width: "100%",
           padding: "48px 40px",
         }}
       >
@@ -60,32 +35,66 @@ export default function RegisterPage() {
               alt="Beeso Logo"
               width={52}
               height={52}
-              style={{ borderRadius: "10px", objectFit: "cover", marginBottom: "12px" }}
+              style={{
+                borderRadius: "10px",
+                objectFit: "cover",
+                marginBottom: "12px",
+              }}
             />
-            <div style={{ fontFamily: "'Cinzel', serif", fontWeight: 700, fontSize: "22px", color: "#E6B800", letterSpacing: "0.15em" }}>
+            <div
+              className="text-gold"
+              style={{
+                fontWeight: 700,
+                fontSize: "22px",
+                letterSpacing: "0.15em",
+              }}
+            >
               BEESO
             </div>
           </Link>
         </div>
 
-        {/* Título */}
-        <h1 style={{ textAlign: "center", fontSize: "24px", fontWeight: 700, color: "#fff", marginBottom: "8px", fontFamily: "'Cinzel', serif" }}>
-          Join the Legends
+        {/* titulo */}
+        <h1
+          style={{
+            textAlign: "center",
+            fontSize: "24px",
+            fontWeight: 700,
+            marginBottom: "8px",
+          }}
+        >
+          Crear cuenta
         </h1>
-        <p style={{ textAlign: "center", color: "rgba(255,255,255,0.5)", fontSize: "14px", fontFamily: "'Georgia', serif", marginBottom: "32px" }}>
-          Create your account and start playing
+
+        <p
+          style={{
+            textAlign: "center",
+            color: "rgba(255,255,255,0.5)",
+            fontSize: "14px",
+            marginBottom: "32px",
+          }}
+        >
+          Crea tu cuenta y comienza a jugar
         </p>
 
-        {/* Formulario */}
+        {/* form */}
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
 
           <div>
-            <label style={{ display: "block", color: "rgba(230,184,0,0.8)", fontSize: "11px", letterSpacing: "0.1em", fontFamily: "'Cinzel', serif", marginBottom: "8px" }}>
-              FULL NAME
+            <label
+              style={{
+                display: "block",
+                color: "rgba(230,184,0,0.8)",
+                fontSize: "11px",
+                letterSpacing: "0.1em",
+                marginBottom: "8px",
+              }}
+            >
+              NOMBRE COMPLETO
             </label>
             <input
               type="text"
-              placeholder="Your name"
+              placeholder="Tu nombre"
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="input-field"
@@ -93,12 +102,12 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label style={{ display: "block", color: "rgba(230,184,0,0.8)", fontSize: "11px", letterSpacing: "0.1em", fontFamily: "'Cinzel', serif", marginBottom: "8px" }}>
-              EMAIL
+            <label style={{ display: "block", color: "rgba(230,184,0,0.8)", fontSize: "11px", letterSpacing: "0.1em", marginBottom: "8px" }}>
+              CORREO
             </label>
             <input
               type="email"
-              placeholder="your@email.com"
+              placeholder="tu@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="input-field"
@@ -106,8 +115,8 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label style={{ display: "block", color: "rgba(230,184,0,0.8)", fontSize: "11px", letterSpacing: "0.1em", fontFamily: "'Cinzel', serif", marginBottom: "8px" }}>
-              PASSWORD
+            <label style={{ display: "block", color: "rgba(230,184,0,0.8)", fontSize: "11px", letterSpacing: "0.1em", marginBottom: "8px" }}>
+              CONTRASEÑA
             </label>
             <input
               type="password"
@@ -119,8 +128,8 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label style={{ display: "block", color: "rgba(230,184,0,0.8)", fontSize: "11px", letterSpacing: "0.1em", fontFamily: "'Cinzel', serif", marginBottom: "8px" }}>
-              CONFIRM PASSWORD
+            <label style={{ display: "block", color: "rgba(230,184,0,0.8)", fontSize: "11px", letterSpacing: "0.1em", marginBottom: "8px" }}>
+              CONFIRMAR CONTRASEÑA
             </label>
             <input
               type="password"
@@ -131,31 +140,42 @@ export default function RegisterPage() {
             />
           </div>
 
-          <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "12px", fontFamily: "'Georgia', serif", lineHeight: 1.6 }}>
-            By creating an account you agree to our{" "}
-            <span style={{ color: "rgba(230,184,0,0.6)", cursor: "pointer" }}>Terms of Service</span>
-            {" "}and{" "}
-            <span style={{ color: "rgba(230,184,0,0.6)", cursor: "pointer" }}>Privacy Policy</span>.
+          <p
+            style={{
+              color: "rgba(255,255,255,0.35)",
+              fontSize: "12px",
+              lineHeight: 1.6,
+            }}
+          >
+            Al crear una cuenta aceptas nuestros{" "}
+            <span style={{ color: "rgba(230,184,0,0.6)" }}>Términos de servicio</span>
+            {" "}y{" "}
+            <span style={{ color: "rgba(230,184,0,0.6)" }}>Política de privacidad</span>.
           </p>
 
-          <button className="btn-gold" onClick={() => {}}>
-            Create Account
+          <button className="btn-primary" onClick={() => {}}>
+            Crear cuenta
           </button>
-
         </div>
 
-        {/* Divider */}
+        {/* division */}
         <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "24px 0" }}>
           <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.1)" }} />
-          <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px", fontFamily: "'Georgia', serif" }}>or</span>
+          <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "12px" }}>
+            o
+          </span>
           <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.1)" }} />
         </div>
 
-        {/* Login link */}
-        <p style={{ textAlign: "center", color: "rgba(255,255,255,0.5)", fontSize: "14px", fontFamily: "'Georgia', serif" }}>
-          Already have an account?{" "}
-          <Link href="/login" style={{ color: "#E6B800", textDecoration: "none", fontWeight: 700 }}>
-            Sign In
+        {/* login */}
+        <p style={{ textAlign: "center", color: "rgba(255,255,255,0.5)", fontSize: "14px" }}>
+          ¿Ya tienes una cuenta?{" "}
+          <Link
+            href="/login"
+            className="text-gold"
+            style={{ textDecoration: "none", fontWeight: 700 }}
+          >
+            Inicia sesión
           </Link>
         </p>
       </div>

@@ -1,26 +1,56 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #1a0305;
+  color: white;
+  font-family: 'Cinzel', 'Georgia', serif;
+  margin: 0;
+}
+
+/* botones */
+.btn-primary,
+.btn-gold {
+  background: linear-gradient(135deg, #E6B800, #CC8800);
+  color: #1a0305;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-outline {
+  border: 2px solid #E6B800;
+  color: #E6B800;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* cajas */
+.input-field {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(230,184,0,0.25);
+  color: white;
+}
+
+.input-field:focus {
+  border-color: #E6B800;
+}
+
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(230,184,0,0.15);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* texto */
+.text-gold {
+  color: #E6B800;
 }
